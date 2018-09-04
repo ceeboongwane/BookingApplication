@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Your Booking</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-list>
+        <ion-item *ngFor="let a of list">
+          <ion-thumbnail item-start>
+            <img [src]="a.pic">
+          </ion-thumbnail>
+          <h2>{{a.roomType}}</h2>
+          <p>From: R{{a.checkIn}}</p>
+          <p>Total cost: {{a.cost}}</p>
+          <button ion-button color="danger" clear item-end (click)="remove(a.key)">remove</button>
+        </ion-item>
+      </ion-list>
+</ion-content>
